@@ -19,7 +19,7 @@ const DragAndDropField: React.FC<DragAndDropFieldProps> = (props: DragAndDropFie
   } = useDragAndDropField(props);
 
   return (
-    <section className="container">
+    <section className="container" data-testid="drag-and-drop-field">
       <div className={"drag-zone"} {...getRootProps()}>
         <input {...getInputProps()} />
         <p>{props?.multiple ? intl.formatMessage({ id: 'drag.drop.titulo.uno' }) : intl.formatMessage({ id: 'drag.drop.titulo.dos' })}</p>

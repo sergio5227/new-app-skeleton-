@@ -30,7 +30,7 @@ const DinamicTableMejorada: React.FC<DinamicTableMejoradaProps> = (props: Dinami
     }
 
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} data-testid="dinamic-tabla-mejorada">
             {props?.titulo ? <Grid size={{ xs: 12 }}  >
                 <h4 style={{ padding: 14 }} >{props?.titulo}</h4>
             </Grid> : null}

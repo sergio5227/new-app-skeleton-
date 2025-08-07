@@ -1,6 +1,8 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+
+import { useRef, useState, useEffect, useCallback } from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import './index.css';
+
 const SmartLocationInput = ({ apiKey, enAccion, value = '' }) => {
   const autocompleteRef = useRef(null);
   const [inputValue, setInputValue] = useState(value);
@@ -114,7 +116,7 @@ const SmartLocationInput = ({ apiKey, enAccion, value = '' }) => {
   };
 
   return (
-    <div style={{ width: '100%', paddingTop: 10 }}>
+    <div style={{ width: '100%', paddingTop: 10 }} data-testid="smart-location-input">
       <label style={{ width: '100%', textAlign: 'left' }}>
         Dirección
         <Autocomplete

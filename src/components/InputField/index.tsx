@@ -26,6 +26,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
   return (
     <div
       className={`${showFeedback ? isValid : ""}`}
+      data-testid="input-field-container"
     >
       {props?.type !== "textArea" && (
         <div>

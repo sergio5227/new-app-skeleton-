@@ -12,4 +12,5 @@ const textoEn = {
     'intput.validation.min.4':'Minimo 4 caracteres',
     'intput.validation.min.20':'Maximo 20 caracteres'
 };
+
 export default textoEn;
