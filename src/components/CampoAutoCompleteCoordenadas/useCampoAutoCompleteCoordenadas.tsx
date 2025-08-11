@@ -2,6 +2,7 @@ import { useField } from "formik";
 import type { CampoAutoCompleteCoordenadasProps } from "./types";
 import { useState } from "react";
 import { usePlacesWidget } from "react-google-autocomplete";
+import env from "react-dotenv";
 
 
 
@@ -20,7 +21,7 @@ export const useCampoAutoCompleteCoordenadas = (props: CampoAutoCompleteCoordena
     const { onPlaceSelect } = props;
 
     const { ref: bootstrapRef }: any = usePlacesWidget({
-        apiKey: 'AIzaSyANkBT5FmnbJhZPrPHYYhGHuS4KocaL3x8',
+        apiKey: env.GOOGLE_API_KEY,
         language: 'mx',
         inputAutocompleteValue: "country",
         options: {

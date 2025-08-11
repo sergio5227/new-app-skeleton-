@@ -1,4 +1,5 @@
 import axios from './config'
+import env from "react-dotenv";
 
 export const SET_USER = "@SET_USER";
 export const RESET_STATE = "@RESET_STATE";
@@ -19,7 +20,7 @@ export const resetState = () => {
 export const getDataGrid = async (): Promise<any> => {
     try {
         const response: any = await axios.get(
-            `https://www.ag-grid.com/example-assets/olympic-winners.json`,
+             `${env.API_URL}${"example-assets/olympic-winners.json"}`,
         );
         return response?.data || [];
     } catch (error) {

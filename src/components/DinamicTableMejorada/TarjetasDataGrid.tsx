@@ -25,7 +25,7 @@ const TarjetasDataGrid = ({ columnsToShow, rows, props }: any) => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', textAlign:'left' }}>
-            {useMemo(() => (<SearchFiltro onFiltro={(w: string) => { handleFiltro(w) }} />), [ ])}
+            {useMemo(() => (<SearchFiltro onFiltro={(w: string) => { handleFiltro(w) }} />), [handleFiltro ])}
             <br></br>
             {
                 currentCards?.length ? currentCards.map((row: any) => {

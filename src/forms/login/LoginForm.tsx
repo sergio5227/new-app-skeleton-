@@ -8,6 +8,7 @@ import SelectMultipleAutoCompleteField from "../../components/SelectMultipleAuto
 import DragAndDropField from "../../components/DragAndDropField";
 import SmartLocationInput from "../../components/CampoAutoCompleteCoordenadas/SmartLocationInput";
 import { useState } from "react";
+import env from "react-dotenv";
 
 const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
 
@@ -79,7 +80,7 @@ const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
                                     <br />
                                 </Grid>
                                 <>
-                                    <SmartLocationInput value={location} apiKey={'AIzaSyANkBT5FmnbJhZPrPHYYhGHuS4KocaL3x8'} enAccion={(d: any) => {
+                                    <SmartLocationInput value={location} apiKey={env.GOOGLE_API_KEY} enAccion={(d: any) => {
                                         setLocation(d?.address);
                                     }} />
                                 </>
