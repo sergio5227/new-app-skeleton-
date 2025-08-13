@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import textoEs from './idioms/es'
 import textoEn from './idioms/en';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ProviderContextComponent } from './contexts/PerfilContext';
 
 const App = () => {
 
@@ -37,7 +38,7 @@ const App = () => {
           <Route path='/' element={<Login />} />
         </Route>
         <Route element={<PrivateRouter path="/login" />}>
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/dashboard' element={<ProviderContextComponent><Dashboard /></ProviderContextComponent>} />
         </Route>
       </Routes>
     </IntlProvider>

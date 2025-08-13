@@ -15,7 +15,8 @@ const Dashboard = () => {
         setOpenModal,
         openModalConfirm,
         setOpenModalConfirm,
-        data
+        data,
+        token
     } = useDashboard();
 
     return (
@@ -23,7 +24,7 @@ const Dashboard = () => {
             <Container>
                 <Grid container spacing={2} style={{ textAlign: 'center' }} alignContent={'center'} alignItems={'center'} justifyContent={'center'}>
                     <Grid size={{ xs: 6, md: 8, xl: 12 }} >
-                        {intl.formatMessage({ id: "general.dashboard" })}
+                        {intl.formatMessage({ id: "general.dashboard" })}, {token}
                     </Grid>
                     <Grid size={{ xl: 12 }}>
                         {data?.length ?

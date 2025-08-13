@@ -6,9 +6,12 @@ import useLoginForm from "./useLoginForm";
 import { LoginFormProps } from "./types";
 import SelectMultipleAutoCompleteField from "../../components/SelectMultipleAutoCompleteField/SelectMultipleAutoCompleteField";
 import DragAndDropField from "../../components/DragAndDropField";
-import SmartLocationInput from "../../components/CampoAutoCompleteCoordenadas/SmartLocationInput";
+//import SmartLocationInput from "../../components/CampoAutoCompleteCoordenadas/SmartLocationInput";
+
 import { useState } from "react";
 import env from "react-dotenv";
+import React, { Suspense, lazy } from "react";
+const SmartLocationInput = lazy<React.ComponentType<any>>(() => import("../../components/CampoAutoCompleteCoordenadas/SmartLocationInput"));
 
 const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
 
@@ -61,12 +64,6 @@ const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
                                                 value: 2
                                             }
                                         ]}
-                                    /* 
-                                        btnPlus
-                                        onAdd={() => {
-                                            //handleisAlertOpenPiso();
-                                        }} 
-                                    */
                                         name="piso"
                                         id="piso"
                                         required
@@ -80,9 +77,20 @@ const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
                                     <br />
                                 </Grid>
                                 <>
-                                    <SmartLocationInput value={location} apiKey={env.GOOGLE_API_KEY} enAccion={(d: any) => {
-                                        setLocation(d?.address);
-                                    }} />
+                                    <Suspense fallback={
+                                        <div style={{
+                                            width: '100%', minHeight: '50px',
+                                            background: 'white',
+                                            border: '1px solid #e5e6e9',
+                                            borderRadius: '5px',
+                                            padding: '1rem',
+                                            margin: '0 auto',
+                                        }}>Cargando componente...</div>
+                                    }>
+                                        <SmartLocationInput value={location} apiKey={env.GOOGLE_API_KEY} enAccion={(d: any) => {
+                                            setLocation(d?.address);
+                                        }} />
+                                    </Suspense>
                                 </>
                                 <Grid size={{ md: 12 }}>
                                     <DragAndDropField acepted={{

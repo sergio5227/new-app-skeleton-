@@ -1,10 +1,12 @@
 import { useDispatch } from "react-redux"
 import { getDataGrid, resetState } from "../../actions/auth";
 import { useIntl } from "react-intl";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
+import { perfilContext } from "src/contexts/PerfilContext";
 
 const useDashboard = () => {
     const intl = useIntl();
+     const token = useContext(perfilContext);
     const dispatch = useDispatch();
     const [openModal, setOpenModal] = useState(false);
     const [openModalConfirm, setOpenModalConfirm] = useState(false)
@@ -31,11 +33,11 @@ const useDashboard = () => {
     const ExpandedComponent = (datos_expandible: any) => {
         const row = datos_expandible;
         return (
-            <div>
+            <>
                 {
                     JSON.stringify(row)
                 }
-            </div>
+            </>
         )
     }
 
@@ -47,7 +49,8 @@ const useDashboard = () => {
         setOpenModal,
         openModalConfirm,
         setOpenModalConfirm,
-        data
+        data,
+        token
     }
 }
 

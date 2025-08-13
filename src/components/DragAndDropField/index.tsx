@@ -36,7 +36,7 @@ const DragAndDropField: React.FC<DragAndDropFieldProps> = (props: DragAndDropFie
         </Button>
       </div> : null}
       <aside>
-        <div>
+        <>
           <Accordion>
             <AccordionSummary
               expandIcon={<ArrowDownwardIcon />}
@@ -51,11 +51,11 @@ const DragAndDropField: React.FC<DragAndDropFieldProps> = (props: DragAndDropFie
           </Accordion>
 
 
-        </div>
+        </>
 
         <br></br>
         <h5 style={{textAlign:'left'}}>{intl.formatMessage({ id: 'general.archivo' })}</h5>
-        <div>{thumbs}</div>
+        <>{thumbs}</>
       </aside>
     </section>
   );

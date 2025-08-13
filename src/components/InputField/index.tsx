@@ -29,7 +29,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
       data-testid="input-field-container"
     >
       {props?.type !== "textArea" && (
-        <div>
+        <>
 
           {props?.label && <Form.Label style={{ fontSize: 15, float:'left', paddingLeft:5 }}>{props?.label} {
             props?.info ?
@@ -65,13 +65,13 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
             }
         
           </InputGroup>
-        </div>
+        </>
       )}
       
       
       
       {props?.type === "textArea" && (
-        <div>
+        <>
           {props?.label && <Form.Label style={{ fontSize: 14 }}>{props?.label}</Form.Label>}
           <InputGroup size="sm" className="mb-3" style={esError ? { border: 'solid 1px red', borderRadius: '8px' } : formik?.touched && !formik?.error && !_.isEmpty(formik?.value) ? { border: 'solid 1px green', borderRadius: '8px' } : { borderRadius: '8px' }}>
             <Form.Control
@@ -90,7 +90,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
               }
             </Button> : null}
           </InputGroup>
-        </div>
+        </>
       )}
 
 

@@ -13,7 +13,7 @@ const AccionesTabla = (props:any) => {
         enAccion
     } = useAccionesTabla();
 
-    return (<div>
+    return (<>
         <Button
             size="small"
             type="button"
@@ -37,7 +37,7 @@ const AccionesTabla = (props:any) => {
                 </IconButton>
             </MenuItem>
         </Menu>
-    </div>)
+    </>)
 }
 
 export default AccionesTabla;
