@@ -5,6 +5,7 @@ import { Form } from 'react-bootstrap';
 import useSearchFiltro from './useSearchFiltro';
 import './style.css';
 import InputField from '../../components/InputField';
+
 export interface SearchFiltroProps{
     onFiltro:(texto:string)=>void
     bg?:string

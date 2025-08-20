@@ -20,8 +20,7 @@ test('renderiza la tabla con un registro', () => {
         <IntlProvider onError={onError} locale={'mx'} messages={loadLocaleData('mx')}>
             <DinamicTableMejorada data={[{ id: 1, nombre: 'Hello, sergio!' }]} />
         </IntlProvider>);
-    //console.log(container.innerHTML);
-    //screen.debug();
+    
     expect(container).toBeTruthy();
     expect(screen.getByTestId('dinamic-tabla-mejorada')).toBeInTheDocument();
 });

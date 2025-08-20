@@ -6,9 +6,6 @@
   font-size: 13px; 
 }
 
-.ag-theme-alpine .ag-cell {
-  font-size: 13px;
-}
 
 .ag-cell {
   white-space: pre-line;
@@ -33,13 +30,9 @@
   height: 15px;
   width: 15px;
   margin: 0; /* Asegura que no haya desplazamientos */
-  padding: 0; /* Remueve espacio extra */
   position: relative;
-
   cursor: pointer;
   padding: 5px; /* Expande el área activa */
   box-sizing: content-box;
-
-
 }
 

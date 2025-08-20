@@ -3,10 +3,10 @@ import rootReducer from './reducers/appReducer';
 
 const saveState = (state: any) => {
     try {
-        localStorage.setItem('reduxState', JSON.stringify(state) );
+        localStorage.setItem('reduxState', JSON.stringify(state));
     } catch (error) {
         console.log(error);
-    }   
+    }
 }
 
 const loadState = () => {
@@ -14,6 +14,7 @@ const loadState = () => {
         const serizedState = localStorage.getItem('reduxState');
         return serizedState ? JSON.parse(serizedState) : undefined;
     } catch (error) {
+        console.log(`Exception while doing something: ${error}`);
         return undefined;
     }
 }
@@ -21,12 +22,12 @@ const loadState = () => {
 const preloadedState = loadState();
 
 const store = configureStore({
-    reducer:rootReducer,
+    reducer: rootReducer,
     preloadedState,
-    devTools:true
+    devTools: true
 });
 
-store.subscribe(()=> {
+store.subscribe(() => {
     saveState(store.getState());
 });
 

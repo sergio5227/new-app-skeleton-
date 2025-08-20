@@ -4,40 +4,42 @@ import DehazeIcon from '@mui/icons-material/Dehaze';
 import useAccionesTabla from "./useAccionesTabla";
 
 
-const AccionesTabla = (props:any) => {
+const AccionesTabla = (props: any) => {
 
-    const { 
+    const {
         anchorEl,
         handleClick,
         handleClose,
         enAccion
     } = useAccionesTabla();
 
-    return (<>
-        <Button
-            size="small"
-            type="button"
-            variant="contained"
-            color="primary"
-            onClick={handleClick}
-            style={{ color: 'white' }}
-        >
-            <DehazeIcon />
-        </Button>
-        <Menu
-            id="simple-menu-user-options"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={() => handleClose()}
-        >
-            <MenuItem onClick={() => enAccion(props)}>
-                <IconButton aria-label={''} size="small" style={{ color: 'rgb(31, 40, 62)' }}>
-                    <RecentActorsIcon />
-                </IconButton>
-            </MenuItem>
-        </Menu>
-    </>)
+    return (
+        <>
+            <Button
+                size="small"
+                type="button"
+                variant="contained"
+                color="primary"
+                onClick={handleClick}
+                style={{ color: 'white' }}
+            >
+                <DehazeIcon />
+            </Button>
+            <Menu
+                id="simple-menu-user-options"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={() => handleClose()}
+            >
+                <MenuItem onClick={() => enAccion(props)}>
+                    <IconButton aria-label={''} size="small" style={{ color: 'rgb(31, 40, 62)' }}>
+                        <RecentActorsIcon />
+                    </IconButton>
+                </MenuItem>
+            </Menu>
+        </>
+    )
 }
 
 export default AccionesTabla;

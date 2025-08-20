@@ -10,7 +10,7 @@ import textoEs from './idioms/es'
 import textoEn from './idioms/en';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ProviderContextComponent } from './contexts/PerfilContext';
-
+import "./theme/App.scss"
 const App = () => {
 
   const local = useSelector(

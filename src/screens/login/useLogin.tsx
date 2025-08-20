@@ -7,7 +7,7 @@ const useLogin = () => {
     const dispatch = useDispatch();
 
     const login = (l: { usuario: string }) => {
-        dispatch(setUser({ id: 1, token: 'sdflkjasjflksnjfl', usuario: l?.usuario }))
+        dispatch(setUser({ id: 1, token:Math.random(), usuario: l?.usuario }))
     }
 
     return {

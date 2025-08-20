@@ -1,11 +1,10 @@
-import { useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { DinamicTableMejoradaProps } from './types';
 import { Tooltip } from "@mui/material";
 import _ from 'lodash';
 import { useResponsive } from '../../hooks/useResponsive';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useIntl } from 'react-intl';
-import React from 'react';
 
 const useDinamicTableMejorada = (props: DinamicTableMejoradaProps) => {
 
@@ -34,7 +33,7 @@ const useDinamicTableMejorada = (props: DinamicTableMejoradaProps) => {
         const nombreColumna = (dta[0].toUpperCase() + dta.substring(1)).replaceAll('_', ' ');
         return {
             ...{
-                filter: props?.sinFiltro ? false : true,
+                filter: props?.sinFiltro,
                 autoHeight: true,
                 field: dta,
                 headerName: nombreColumna,

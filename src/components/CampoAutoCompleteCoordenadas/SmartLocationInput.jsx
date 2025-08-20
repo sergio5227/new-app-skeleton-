@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import './index.css';
+import PropTypes from 'prop-types';
 
 const SmartLocationInput = ({ apiKey, enAccion, value = '' }) => {
   const autocompleteRef = useRef(null);
@@ -52,16 +53,7 @@ const SmartLocationInput = ({ apiKey, enAccion, value = '' }) => {
 
   const handleInputChange = (e) => {
     const value = e.target.value;
-    /* if (value === '') {
-      setLocationData({
-        address: '',
-        lat: '',
-        lng: '',
-      })
-      return false;
-    } */
     setInputValue(value);
-
     const coordRegex = /^\s*(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)\s*$/;
     const match = value.match(coordRegex);
 
@@ -144,6 +136,12 @@ const SmartLocationInput = ({ apiKey, enAccion, value = '' }) => {
       )}
     </div>
   );
+};
+
+SmartLocationInput.propTypes = {
+  apiKey: PropTypes.string.isRequired, 
+  enAccion: PropTypes.string.isRequired, 
+  value: PropTypes.string.isRequired,
 };
 
 export default SmartLocationInput;

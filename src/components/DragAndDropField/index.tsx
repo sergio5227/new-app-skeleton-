@@ -7,7 +7,7 @@ import { useDragAndDropField } from "./useDragAndDropField";
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 
 const DragAndDropField: React.FC<DragAndDropFieldProps> = (props: DragAndDropFieldProps) => {
-  
+
   const {
     intl,
     getRootProps,
@@ -54,7 +54,7 @@ const DragAndDropField: React.FC<DragAndDropFieldProps> = (props: DragAndDropFie
         </>
 
         <br></br>
-        <h5 style={{textAlign:'left'}}>{intl.formatMessage({ id: 'general.archivo' })}</h5>
+        <h5 style={{ textAlign: 'left' }}>{intl.formatMessage({ id: 'general.archivo' })}</h5>
         <>{thumbs}</>
       </aside>
     </section>

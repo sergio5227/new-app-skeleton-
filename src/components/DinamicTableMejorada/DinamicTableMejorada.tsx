@@ -49,7 +49,7 @@ const DinamicTableMejorada: React.FC<DinamicTableMejoradaProps> = (props: Dinami
                 />
             </Grid>
             {
-                showExpandedComponent ? <ExpandendComp handleisAlerCloseComentarios={() => setShowExpandedComponent(null)} children={React.cloneElement(props?.ExpandedComponent, showExpandedComponent)} /> : null
+                showExpandedComponent ? <ExpandendComp handleisAlerCloseComentarios={() => setShowExpandedComponent(null)} >{React.cloneElement(props?.ExpandedComponent, showExpandedComponent)}</ExpandendComp> : null
             }
         </Grid>
     )

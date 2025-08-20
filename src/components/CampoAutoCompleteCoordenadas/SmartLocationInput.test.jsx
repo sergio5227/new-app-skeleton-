@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import SmartLocationInput from './SmartLocationInput';
+import env from "react-dotenv";
 
 test('renderiza el componente de busqueda', () => {
 
   const { container } = render(
-    <SmartLocationInput apiKey={'AIzaSyANkBT5FmnbJhZPrPHYYhGHuS4KocaL3x8'} enAccion={(d) => {
+    <SmartLocationInput apiKey={env.GOOGLE_API_KEY} enAccion={(d) => {
       console.log(d?.address);
     }} />
   );

@@ -20,7 +20,7 @@ const Dashboard = () => {
     } = useDashboard();
 
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className={'container'}>
             <Container>
                 <Grid container spacing={2} style={{ textAlign: 'center' }} alignContent={'center'} alignItems={'center'} justifyContent={'center'}>
                     <Grid size={{ xs: 6, md: 8, xl: 12 }} >
@@ -37,23 +37,23 @@ const Dashboard = () => {
                                 enCheckBox={(d) => console.log(d)}
                                 ExpandedComponent={<ExpandedComponent />}
                                 data={data}
-                            gruupColumns={
-                                [
-                                    {
-                                        headerName: 'Name & Country',
-                                        children: [{ field: "athlete" }, { field: "country" }],
-                                    },
-                                    {
-                                        headerName: 'Results',
-                                        children: [
-                                            { columnGroupShow: "closed", field: "total" },
-                                            { columnGroupShow: "open", field: "gold" },
-                                            { columnGroupShow: "open", field: "silver" },
-                                            { columnGroupShow: "open", field: "bronze" },
-                                        ],
-                                    },
-                                ]
-                            }
+                                gruupColumns={
+                                    [
+                                        {
+                                            headerName: 'Name & Country',
+                                            children: [{ field: "athlete" }, { field: "country" }],
+                                        },
+                                        {
+                                            headerName: 'Results',
+                                            children: [
+                                                { columnGroupShow: "closed", field: "total" },
+                                                { columnGroupShow: "open", field: "gold" },
+                                                { columnGroupShow: "open", field: "silver" },
+                                                { columnGroupShow: "open", field: "bronze" },
+                                            ],
+                                        },
+                                    ]
+                                }
                             /> : null}
                     </Grid>
                     <Grid size={{ xs: 12, md: 6, xl: 6 }}>
@@ -72,7 +72,7 @@ const Dashboard = () => {
                 handleClose={() => setOpenModal(false)}
                 isOpen={openModal}
             >
-                <>Child</>
+                <p>texto</p>
             </ModalComponent>
             <ModalConfirm esConComentarios onAcept={(t) => {
                 setOpenModalConfirm(false);

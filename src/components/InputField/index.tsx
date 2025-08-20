@@ -30,8 +30,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
     >
       {props?.type !== "textArea" && (
         <>
-
-          {props?.label && <Form.Label style={{ fontSize: 15, float:'left', paddingLeft:5 }}>{props?.label} {
+          {props?.label && <Form.Label style={{ fontSize: 15, float: 'left', paddingLeft: 5 }}>{props?.label} {
             props?.info ?
               <Tooltip title={props?.info || ''} style={{ cursor: 'help' }}>
                 <QuestionMarkIcon color="info" />
@@ -39,13 +38,13 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
               : null
           }  </Form.Label>}
 
-          <InputGroup className="mb-3"  style={esError ? { border: 'solid 1px red', borderRadius: '8px' } : formik?.touched || (!formik?.error && !_.isEmpty(formik?.value)) ? { border: 'solid 1px #01db01', borderRadius: '8px' } : { borderRadius: '8px' }}>
+          <InputGroup className="mb-3" style={esError ? { border: 'solid 1px red', borderRadius: '8px' } : formik?.touched || (!formik?.error && !_.isEmpty(formik?.value)) ? { border: 'solid 1px #01db01', borderRadius: '8px' } : { borderRadius: '8px' }}>
             <Form.Control
               placeholder={props?.placeholder || ""}
               onFocus={handleFocus}
               {...newPros}
               {...field}
-              //style={{ border: 'none', }}
+            //style={{ border: 'none', }}
             />
             {esError || (formik?.touched && !formik?.error && !_.isEmpty(formik?.value)) ? <Button variant="outline-secondary" style={{ border: '1px solid rgb(227 215 215)', borderLeft: 'none' }} id="button-addon2">
               {
@@ -63,13 +62,13 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
                 </Button>
                 : null
             }
-        
+
           </InputGroup>
         </>
       )}
-      
-      
-      
+
+
+
       {props?.type === "textArea" && (
         <>
           {props?.label && <Form.Label style={{ fontSize: 14 }}>{props?.label}</Form.Label>}
